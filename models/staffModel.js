@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         last_name: {
             type: DataTypes.STRING,
             allowNull: false
-        }/*,
+        },
         date_of_birth: {
             type: DataTypes.DATEONLY,
             allowNull: false
@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
                 model: 'department', 
                 key: 'id', 
              }
-        }*/
+        }
     })
 
     return Staff

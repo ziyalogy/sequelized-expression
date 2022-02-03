@@ -7,18 +7,17 @@ var corsOptions = {
 }
 
 
-
-//routers
-const router = require('./routes/staffRouters.js')
-app.use('api/staff/', router)
-
-
 //middleware
 app.use(cors(corsOptions))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-app.get('/api', (req, res) => {
+//routers
+const router = require('./routes/staffRouters.js')
+app.use('api/staff', router)
+
+
+app.get('/', (req, res) => {
     res.json({ message: 'Employees DB and API'})
 })
 

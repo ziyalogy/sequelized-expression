@@ -1,8 +1,8 @@
 const db = require('../models')
 
 //create main model
-const Staff = db.Staff
-const Course = db.Courses
+const Staff = db.staff
+//const Course = db.courses
 
 //Main tasks
 //To Add staff
@@ -11,9 +11,9 @@ const addStaff = async (req, res) => {
     let info = {
         first_name: req.body.first_name,
         last_name: req.body.last_name,
-        /*date_of_birth: req.body.date_of_birth,
+        date_of_birth: req.body.date_of_birth,
         role_id: req.body.role_id,
-        department_id: req.body.department_id*/
+        department_id: req.body.department_id
     }
 
     const staff = await Staff.create(info)

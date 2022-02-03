@@ -31,11 +31,11 @@ const db = {}
 db.sequelize = Sequelize
 db.sequelize = sequelize
 
-db.Staff = require('./staffModel.js')(sequelize, DataTypes)
-db.Courses = require('./courseModel.js')(sequelize, DataTypes)
-db.Roles = require('./roleModel.js')(sequelize, DataTypes)
-db.Departments = require('./departmentModel.js')(sequelize, DataTypes)
-db.Staff_Courses = require('./staffCourseModel.js')(sequelize, DataTypes)
+db.staff = require('./staffModel.js')(sequelize, DataTypes)
+db.courses = require('./courseModel.js')(sequelize, DataTypes)
+db.roles = require('./roleModel.js')(sequelize, DataTypes)
+db.departments = require('./departmentModel.js')(sequelize, DataTypes)
+db.staff_Courses = require('./staffCourseModel.js')(sequelize, DataTypes)
 
 db.sequelize.sync({ force: false })
     .then(() => {
