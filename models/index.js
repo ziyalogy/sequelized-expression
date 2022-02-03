@@ -5,19 +5,19 @@ const { dialect } = require('../config/dbConfig.js');
 const sequelize = new Sequelize(
     dbConfig.DB,
     dbConfig.USER,
-    dbConfig.PASSWORD,
-        host: dbConfig.HOST,
-        dialect: dbConfig.dialect,
-        operatorAliases: false //
+    dbConfig.PASSWORD, {
+    host: dbConfig.HOST,
+    dialect: dbConfig.dialect,
+    operatorAliases: false,
         
-        pool: {
-            max: dbConfig.pool.max,
-            min: dbConfig.pool.min,
-            acquire: dbConfig.pool.acquire,
-            idle: dbConfig.pool.idle
-        }
+    pool: {
+        max: dbConfig.pool.max,
+        min: dbConfig.pool.min,
+        acquire: dbConfig.pool.acquire,
+        idle: dbConfig.pool.idle
+    }
 
-        
+}  
 )
 
 sequelize.authenticate()
@@ -39,7 +39,7 @@ db.Staff_Courses = require('./staffCourseModel.js')(sequelize, DataTypes)
 
 db.sequelize.sync({ force: false })
     .then(() => {
-    console.log('Re-sync done')
+    console.log('Database ready')
 })
 
 module.exports = db

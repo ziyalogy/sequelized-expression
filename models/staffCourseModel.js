@@ -7,19 +7,11 @@ module.exports = (sequelize, DataTypes) => {
         },
         staff_id: {
             type: DataTypes.STRING,
-            allowNull: false,
-            references: {
-                model: 'staff', // 'staff' refers to Staff name
-                key: 'id', // 'id' refers to primary key in staff table
-             }
+            allowNull: false
         },
         course_id: {
             type: DataTypes.STRING,
-            allowNull: false,
-            references: {
-                model: 'course', 
-                key: 'id', 
-             }
+            allowNull: false
         }
     })
 

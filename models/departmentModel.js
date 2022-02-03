@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
     const Department = sequelize.define("department", {
         id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
             primaryKey: true
         },

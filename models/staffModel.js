@@ -1,10 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
     const Staff = sequelize.define("staff", {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true
-        },
         first_name: {
             type: DataTypes.STRING,
             allowNull: false
@@ -12,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         last_name: {
             type: DataTypes.STRING,
             allowNull: false
-        },
+        }/*,
         date_of_birth: {
             type: DataTypes.DATEONLY,
             allowNull: false
@@ -32,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
                 model: 'department', 
                 key: 'id', 
              }
-        }
+        }*/
     })
 
     return Staff

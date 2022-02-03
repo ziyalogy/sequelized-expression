@@ -6,6 +6,13 @@ var corsOptions = {
     origin: 'http://localhost:1984'
 }
 
+
+
+//routers
+const router = require('./routes/staffRouters.js')
+app.use('api/staff/', router)
+
+
 //middleware
 app.use(cors(corsOptions))
 app.use(express.json())
